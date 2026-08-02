@@ -1,0 +1,92 @@
+generated: '2026-08-02'
+method: searched
+source: https://bostongene.com/news-and-publications/documents
+note: >-
+  BostonGene is a clinical diagnostics company, not an API provider. Its
+  published conformance surface is laboratory accreditation and US health-privacy
+  regulation, not API/interoperability standards. The only technical standard
+  observable on a BostonGene host is OpenID Connect Discovery, served by the
+  Salesforce-hosted customer portal.
+standards:
+- id: clia
+  name: Clinical Laboratory Improvement Amendments — Certificate of Accreditation
+  conforms: true
+  evidence: https://bostongene.com/assets/pdf_forms/CLIA_StephenLyle_Expired04May2027.pdf
+  published_on: https://bostongene.com/news-and-publications/documents
+- id: cap
+  name: College of American Pathologists accreditation
+  conforms: true
+  evidence: https://bostongene.com/assets/pdf_forms/BostonGene-CAP-License.pdf
+  published_on: https://bostongene.com/news-and-publications/documents
+- id: nys-doh-clinical-laboratory-permit
+  name: New York State Department of Health clinical laboratory permit
+  conforms: true
+  evidence: https://bostongene.com/news-and-publications/documents
+- id: us-state-clinical-laboratory-licenses
+  name: State clinical laboratory licenses (MA, CA, MD, DC, PA, RI)
+  conforms: true
+  evidence: https://bostongene.com/news-and-publications/documents
+- id: iso
+  name: ISO certification (standard number not published)
+  conforms: partial
+  evidence: >-
+    ISO certification badge displayed in the "CERTIFICATION & ACCREDITATION"
+    group on https://bostongene.com/ — the specific ISO standard is not named on
+    the site and no certificate is published, so this is recorded as an
+    unverified claim.
+- id: hipaa
+  name: HIPAA (US health information privacy)
+  conforms: true
+  evidence: >-
+    Notice of Privacy Practices at https://bostongene.com/privacy-practices
+    states "We are required by law to maintain the privacy and security of your
+    protected health information." No explicit covered-entity declaration.
+- id: no-surprises-act
+  name: No Surprises Act / balance billing disclosure
+  conforms: true
+  evidence: https://bostongene.com/balance-billing-disclosure
+- id: oidc-discovery
+  name: OpenID Connect Discovery 1.0
+  conforms: true
+  evidence: >-
+    200 at https://bostongene.my.site.com/.well-known/openid-configuration
+    (Salesforce Experience Cloud customer portal, issuer
+    https://bostongene.my.site.com)
+- id: oauth2
+  name: OAuth 2.0
+  conforms: true
+  evidence: authorization/token/revocation/introspection endpoints advertised in the
+    OIDC discovery document
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: false
+  evidence: 401 at /.well-known/oauth-authorization-server (portal), 404 on bostongene.com
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: 404 at https://bostongene.com/.well-known/security.txt
+- id: openapi
+  conforms: false
+  evidence: no OpenAPI/Swagger document found on any BostonGene host (see well-known/bostongene-well-known.yml)
+- id: asyncapi
+  conforms: false
+  evidence: no event, streaming or webhook surface published
+- id: a2a-agent-card
+  conforms: false
+  evidence: 404/401 at /.well-known/agent-card.json and /.well-known/agent.json on every
+    host
+- id: mcp
+  conforms: false
+  evidence: no Model Context Protocol server published by BostonGene
+- id: llmstxt
+  conforms: false
+  evidence: 404 at https://bostongene.com/llms.txt
+- id: fhir
+  conforms: false
+  evidence: no FHIR/HL7 interface documented publicly; results are delivered through
+    the authenticated customer portal
+x-evidence:
+  fetched: '2026-08-02'
+  sources:
+  - https://bostongene.com/news-and-publications/documents
+  - https://bostongene.com/privacy-practices
+  - https://bostongene.com/balance-billing-disclosure
+  - https://bostongene.my.site.com/.well-known/openid-configuration

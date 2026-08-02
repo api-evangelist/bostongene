@@ -1,0 +1,99 @@
+generated: '2026-08-02'
+method: probed
+source: live GET of /.well-known/* on every BostonGene host found in apis.yml
+note: >-
+  BostonGene publishes no developer API surface. The only /.well-known document
+  that resolves anywhere on a BostonGene-controlled host is the OpenID Connect
+  discovery document served by the authenticated customer portal, which runs on
+  Salesforce Experience Cloud at bostongene.my.site.com. Every other probe was a
+  hard miss (404 on the marketing site, 401 behind the portal's login wall).
+hosts:
+- host: https://bostongene.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    note: sitemap reference + two Disallow rules; no AI/agent directives
+  - path: /sitemap.xml
+    status: 200
+    content_type: application/xml
+    note: 305 URLs
+- host: https://www.bostongene.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+- host: https://bostongene.my.site.com
+  platform: Salesforce Experience Cloud
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json;charset=UTF-8
+    file: bostongene-openid-configuration.json
+    standard: OpenID Connect Discovery 1.0
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+  - path: /llms.txt
+    status: 401
+- host: https://science.bostongene.com
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 200
+    accepted: false
+    reason: SPA/CDN catch-all returns the same 708-byte HTML body for every path
+  - path: /.well-known/agent.json
+    status: 200
+    accepted: false
+    reason: SPA/CDN catch-all returns the same 708-byte HTML body for every path
+  - path: /openapi.json
+    status: 200
+    accepted: false
+    reason: HTML catch-all, not a parseable OpenAPI document
+x-evidence:
+  fetched: '2026-08-02'
+  hosts_probed:
+  - bostongene.com
+  - www.bostongene.com
+  - bostongene.my.site.com
+  - science.bostongene.com
+  subdomain_enumeration: crt.sh certificate transparency (bostongene.com)
+  subdomains_observed:
+  - science.bostongene.com
+  - staging.bostongene.com
+  - server.bostongene.com
+  - fw1.bostongene.com
+  dns_misses:
+  - api.bostongene.com
+  - app.bostongene.com
+  - portal.bostongene.com
+  - platform.bostongene.com
+  - docs.bostongene.com
+  - developer.bostongene.com
+  - developers.bostongene.com
+  - status.bostongene.com
+  - trust.bostongene.com

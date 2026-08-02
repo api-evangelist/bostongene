@@ -1,23 +1,100 @@
 aid: bostongene
 name: BostonGene
-description: 'BostonGene is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'BostonGene is a Waltham, Massachusetts precision-oncology company that
+  combines an in-house CLIA-certified and CAP-accredited clinical laboratory with an
+  AI-powered bioinformatics platform. It integrates whole-exome and whole-transcriptome
+  sequencing, liquid biopsy (cfDNA/cfRNA), single-cell RNA sequencing, flow cytometry,
+  spatial proteomics and digital pathology into multimodal molecular and immune profiling.
+  Its clinical products include the Tumor Portrait test, immune system profiling, an
+  immunohistochemistry (IHC) test and an Unknown Primary test; its biopharma services
+  cover target analysis, biomarker discovery, clinical trial support, drug indication
+  expansion and unmet-need identification. BostonGene publishes open-source research
+  software (Kassandra cell deconvolution, Molecular Functional Portraits, pyigmap)
+  on GitHub, but exposes no public developer API, SDK or API documentation; clinician
+  ordering and report delivery run through an authenticated Salesforce Experience Cloud
+  customer portal.'
 url: https://raw.githubusercontent.com/api-evangelist/bostongene/refs/heads/main/apis.yml
+image: https://bostongene.com/public/images/BostonGene-Logo.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pipeline-2026-08-02
+x-api-surface: none-public
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Company
+- Health Care
+- Oncology
+- Precision Medicine
+- Genomics
+- Bioinformatics
+- Artificial Intelligence
+- Diagnostics
+- Life Sciences
+- Clinical Laboratory
 apis: []
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: LLMsTxt
+  url: llms/bostongene-llms.txt
+- type: Packages
+  url: packages/bostongene-packages.yml
+- type: Conformance
+  url: conformance/bostongene-conformance.yml
+- type: OAuthScopes
+  url: scopes/bostongene-scopes.yml
+- type: Authentication
+  url: authentication/bostongene-authentication.yml
+- type: WellKnown
+  url: well-known/bostongene-well-known.yml
+- type: DomainSecurity
+  url: security/bostongene-domain-security.yml
 - type: Website
+  url: https://bostongene.com/
+- type: Portal
+  url: https://bostongene.my.site.com/
+- type: Login
+  url: https://bostongene.my.site.com/s/login/
+- type: SignUp
+  url: https://bostongene.com/new-account-request
+- type: Technology
+  url: https://bostongene.com/technology
+- type: Products
+  url: https://bostongene.com/providers
+- type: Services
+  url: https://bostongene.com/biopharma
+- type: Blog
+  url: https://bostongene.com/news-and-publications/news
+- type: Publications
+  url: https://bostongene.com/news-and-publications/publications
+- type: Compliance
+  url: https://bostongene.com/news-and-publications/documents
+- type: Support
+  url: https://bostongene.com/contact-us
+- type: GitHubOrganization
+  url: https://github.com/BostonGene
+- type: TermsOfService
+  url: https://bostongene.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://bostongene.com/privacy-policy
+- type: PrivacyPractices
+  url: https://bostongene.com/privacy-practices
+- type: Careers
+  url: https://bostongene.com/about-us/careers
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bostongene
+- type: X
+  url: https://x.com/BostonGeneCorp
+- type: Forge
   url: https://forgeglobal.com/bostongene_stock/

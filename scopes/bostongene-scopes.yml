@@ -1,0 +1,97 @@
+generated: '2026-08-02'
+method: probed
+source: https://bostongene.my.site.com/.well-known/openid-configuration
+provider_specific: false
+note: >-
+  These are the `scopes_supported` advertised verbatim by the OpenID Connect
+  discovery document on BostonGene's customer-portal host. They are the standard
+  Salesforce Experience Cloud platform scope set, not a BostonGene-authored API
+  permission model — BostonGene publishes no developer API and no scope reference
+  page. Recorded because the document is genuinely served from a BostonGene host;
+  do NOT read this list as a BostonGene API authorization design.
+schemes:
+- name: BostonGene Customer Portal (OIDC)
+  source: well-known/bostongene-openid-configuration.json
+  issuer: https://bostongene.my.site.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://bostongene.my.site.com/services/oauth2/authorize
+    tokenUrl: https://bostongene.my.site.com/services/oauth2/token
+scopes:
+- scope: openid
+  description: OpenID Connect — request an ID token
+- scope: profile
+  description: Standard OIDC profile claims
+- scope: email
+  description: Standard OIDC email claims
+- scope: address
+  description: Standard OIDC address claim
+- scope: phone
+  description: Standard OIDC phone claims
+- scope: id
+  description: Identity URL access
+- scope: api
+  description: Access the platform REST/SOAP APIs on behalf of the user
+- scope: web
+  description: Web session access
+- scope: full
+  description: Full access to all data accessible to the user
+- scope: refresh_token
+  description: Issue a refresh token
+- scope: offline_access
+  description: Offline access (refresh token equivalent)
+- scope: custom_permissions
+  description: Include the user's custom permissions in the token response
+- scope: lightning
+  description: Access Lightning applications
+- scope: visualforce
+  description: Access Visualforce pages
+- scope: content
+  description: Access content/files
+- scope: chatter_api
+  description: Access the Chatter/Connect REST API
+- scope: chatbot_api
+  description: Access the chatbot API
+- scope: wave_api
+  description: Access the analytics (Wave) API
+- scope: eclair_api
+  description: Access the Eclair geodata API
+- scope: pardot_api
+  description: Access the Pardot marketing automation API
+- scope: interaction_api
+  description: Access the interaction/flow API
+- scope: user_registration_api
+  description: Access the user registration API
+- scope: pwdless_login_api
+  description: Access the passwordless login API
+- scope: forgot_password
+  description: Access the forgot-password API
+- scope: scrt_api
+  description: Access the service-cloud real-time API
+- scope: sfap_api
+  description: Access the platform agent API
+- scope: mcp_api
+  description: Access the platform Model Context Protocol API surface
+- scope: einstein_gpt_api
+  description: Access the Einstein GPT API
+- scope: data_cloud_user_claims
+  description: Include Data Cloud user claims
+- scope: cdp_api
+  description: Access the Customer Data Platform API
+- scope: cdp_query_api
+  description: Access the CDP query API
+- scope: cdp_ingest_api
+  description: Access the CDP ingestion API
+- scope: cdp_profile_api
+  description: Access the CDP profile API
+- scope: cdp_segment_api
+  description: Access the CDP segmentation API
+- scope: cdp_identityresolution_api
+  description: Access the CDP identity resolution API
+- scope: cdp_calculated_insight_api
+  description: Access the CDP calculated insights API
+x-evidence:
+  fetched: '2026-08-02'
+  url: https://bostongene.my.site.com/.well-known/openid-configuration
+  http_status: 200
+  scope_count: 37

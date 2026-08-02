@@ -1,0 +1,85 @@
+generated: '2026-08-02'
+method: searched
+source: https://github.com/BostonGene
+sdks: none
+note: >-
+  BostonGene ships NO API client libraries or SDKs — it publishes no API. What it
+  does publish first-party is open-source computational-biology research code on
+  GitHub (algorithms, analysis notebooks and one sequencing pipeline), catalogued
+  below so the repo records the real software surface. Registry checks were misses:
+  npm search "bostongene" returned 0 packages; PyPI has no `bostongene`, `pyigmap`
+  or BostonGene-owned `kassandra` (the PyPI `kassandra` project belongs to an
+  unrelated author). Because none of these are API client libraries, this artifact
+  deliberately does NOT carry an `SDKs` pointer in apis.yml.
+registries_probed:
+- registry: npm
+  query: bostongene
+  results: 0
+- registry: pypi
+  names: [bostongene, pyigmap, kassandra-bg]
+  results: 0
+- registry: pypi
+  name: kassandra
+  results: 1
+  official: false
+  note: unrelated Bayesian deep-learning package by James Montgomery
+packages:
+- language: python
+  registry: github
+  name: pyigmap
+  url: https://github.com/BostonGene/pyigmap
+  license: GPL-3.0
+  official: true
+  kind: bioinformatics-pipeline
+  description: Pipeline for mapping and annotating T- and B-cell receptor gene rearrangement
+    sequences (AIRR-seq / TCR-BCR repertoire); nextflow workflow. Marked under development.
+- language: python
+  registry: github
+  name: Kassandra
+  url: https://github.com/BostonGene/Kassandra
+  official: true
+  kind: algorithm
+  description: BostonGene cell deconvolution algorithm from RNA-seq.
+- language: python
+  registry: github
+  name: MFP
+  url: https://github.com/BostonGene/MFP
+  official: true
+  kind: analysis-notebooks
+  description: Molecular Functional Portraits — tumor microenvironment classification.
+- language: python
+  registry: github
+  name: Somatic_reference_standards
+  url: https://github.com/BostonGene/Somatic_reference_standards
+  official: true
+  kind: reference-data
+  description: Extended somatic reference standards of model cancer cell lines.
+- language: python
+  registry: github
+  name: Cell_Atlas_MxIF
+  url: https://github.com/BostonGene/Cell_Atlas_MxIF
+  official: true
+  kind: analysis-notebooks
+  description: Multiplexed immunofluorescence cell atlas analysis.
+- language: python
+  registry: github
+  name: LME
+  url: https://github.com/BostonGene/LME
+  official: true
+  kind: algorithm
+  description: Functions for classifying DLBCL into lymphoma microenvironment (LME)
+    types.
+- language: python
+  registry: github
+  name: Multiregional_ccRCC
+  url: https://github.com/BostonGene/Multiregional_ccRCC
+  official: true
+  kind: analysis-notebooks
+  description: Multi-omics analysis of multiregional clear-cell renal cell carcinoma
+    samples.
+x-evidence:
+  fetched: '2026-08-02'
+  url: https://api.github.com/orgs/BostonGene/repos
+  http_status: 200
+  repos_total: 16
+  repos_catalogued: 7

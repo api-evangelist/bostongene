@@ -1,0 +1,60 @@
+generated: '2026-08-02'
+method: probed
+source: https://bostongene.my.site.com/.well-known/openid-configuration
+docs: https://bostongene.com/new-account-request
+note: >-
+  BostonGene publishes no developer API and therefore no API authentication
+  documentation. The only machine-readable authentication contract observable on
+  a BostonGene-controlled host is the OpenID Connect discovery document served by
+  the BostonGene Customer Portal, a Salesforce Experience Cloud site. The
+  endpoints below are BostonGene-branded (issuer = https://bostongene.my.site.com)
+  but the flows, scopes and claims are the Salesforce platform's, not a
+  BostonGene-designed API authorization model. Portal accounts are provisioned by
+  request for clinicians, PAs, nurse practitioners and pathologists — there is no
+  self-service developer key issuance.
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  api_key_in: []
+  oauth2_flows:
+  - authorizationCode
+  - implicit
+  developer_api_auth: none-published
+schemes:
+- name: BostonGene Customer Portal (OIDC)
+  type: openIdConnect
+  openIdConnectUrl: https://bostongene.my.site.com/.well-known/openid-configuration
+  issuer: https://bostongene.my.site.com
+  platform: Salesforce Experience Cloud
+  sources:
+  - well-known/bostongene-openid-configuration.json
+  endpoints:
+    authorization: https://bostongene.my.site.com/services/oauth2/authorize
+    token: https://bostongene.my.site.com/services/oauth2/token
+    userinfo: https://bostongene.my.site.com/services/oauth2/userinfo
+    revocation: https://bostongene.my.site.com/services/oauth2/revoke
+    introspection: https://bostongene.my.site.com/services/oauth2/introspect
+    registration: https://bostongene.my.site.com/services/oauth2/register
+    jwks: https://bostongene.my.site.com/id/keys
+    end_session: https://bostongene.my.site.com/services/auth/idp/oidc/logout
+  response_types_supported:
+  - code
+  - token
+  - token id_token
+  token_endpoint_auth_methods_supported:
+  - client_secret_post
+  - client_secret_basic
+  - private_key_jwt
+  id_token_signing_alg_values_supported:
+  - RS256
+  subject_types_supported:
+  - public
+  frontchannel_logout_supported: true
+  dynamic_client_registration: true
+  scopes: scopes/bostongene-scopes.yml
+x-evidence:
+  fetched: '2026-08-02'
+  url: https://bostongene.my.site.com/.well-known/openid-configuration
+  http_status: 200
+  content_type: application/json;charset=UTF-8
