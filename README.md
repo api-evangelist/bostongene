@@ -64,29 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BostonGene is a Waltham, Massachusetts precision-oncology company that pairs an in-house CLIA-certified, CAP-accredited clinical laboratory with an AI-powered bioinformatics platform. It integrates whole-exome and whole-transcriptome sequencing, liquid biopsy (cfDNA/cfRNA), single-cell RNA sequencing, flow cytometry, spatial proteomics and digital pathology into multimodal molecular and immune profiling — sold to providers as the Tumor Portrait test, immune system profiling, an IHC test and an Unknown Primary test, and to biopharma as target analysis, biomarker discovery and clinical trial support.
+BostonGene is a Waltham, Massachusetts precision-oncology company that combines an in-house CLIA-certified and CAP-accredited clinical laboratory with an AI-powered bioinformatics platform. It integrates whole-exome and whole-transcriptome sequencing, liquid biopsy (cfDNA/cfRNA), single-cell RNA sequencing, flow cytometry, spatial proteomics and digital pathology into multimodal molecular and immune profiling. Its clinical products include the Tumor Portrait test, immune system profiling, an immunohistochemistry (IHC) test and an Unknown Primary test; its biopharma services cover target analysis, biomarker discovery, clinical trial support, drug indication expansion and unmet-need identification. BostonGene publishes open-source research software (Kassandra cell deconvolution, Molecular Functional Portraits, pyigmap) on GitHub, but exposes no public developer API, SDK or API documentation; clinician ordering and report delivery run through an authenticated Salesforce Experience Cloud customer portal.
 
-- https://bostongene.com/
-- https://bostongene.my.site.com/ (authenticated customer portal)
-- https://github.com/BostonGene
+**Areas:** Company · Healthcare · Oncology · Precision Medicine · Genomics · Bioinformatics · Artificial Intelligence · Diagnostics · Life Sciences · Clinical Laboratory
 
-## API surface
+## BostonGene on APIs.io
 
-**None public.** As of the 2026-08-02 enrichment pass BostonGene publishes no developer API, no SDK, no API documentation, no OpenAPI/AsyncAPI/GraphQL contract, no MCP server, no A2A agent card and no `llms.txt`. Clinician ordering and report delivery run through an authenticated Salesforce Experience Cloud customer portal; accounts are provisioned by request, not self-service.
+Everything profiled for BostonGene is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bostongene/](https://apis.io/providers/bostongene/)** — or go straight to one of the APIs or properties below.
 
-The only machine-readable document found on a BostonGene-controlled host is the portal's OpenID Connect discovery document — captured verbatim in `well-known/`.
+### Published properties
 
-## Artifacts
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Path | Type | Method |
-|---|---|---|
-| `well-known/bostongene-well-known.yml` | WellKnown | probed |
-| `well-known/bostongene-openid-configuration.json` | — (verbatim) | probed |
-| `authentication/bostongene-authentication.yml` | Authentication | probed |
-| `scopes/bostongene-scopes.yml` | OAuthScopes | probed |
-| `conformance/bostongene-conformance.yml` | Conformance | searched |
-| `packages/bostongene-packages.yml` | Packages | searched |
-| `security/bostongene-domain-security.yml` | DomainSecurity | probed |
-| `llms/bostongene-llms.txt` | LLMsTxt | generated |
+#### Security (2)
 
-BostonGene publishes real laboratory accreditations (CLIA, CAP, New York State DOH, and MA/CA/MD/DC/PA/RI clinical laboratory licenses) at https://bostongene.com/news-and-publications/documents — captured in `conformance/`.
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bostongene Authentication](https://apis.io/security/bostongene/bostongene-authentication/)
+- [Bostongene Domain Security](https://apis.io/security/bostongene/bostongene-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Bostongene Scopes](https://apis.io/scopes/bostongene/bostongene-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bostongene.com/)
+- [Sign up](https://bostongene.com/new-account-request)
+- [Support](https://bostongene.com/contact-us)
+- [Blog](https://bostongene.com/news-and-publications/news)
+- [Compliance](https://bostongene.com/news-and-publications/documents)
+- [Terms of service](https://bostongene.com/terms-of-use)
+- [Privacy policy](https://bostongene.com/privacy-policy)
+- [GitHub](https://github.com/BostonGene)
+
+## API Evangelist rating
+
+**Kin Score 15.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 6.6 |
+
+**Agent readiness 10.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.0** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bostongene/](https://apis.io/providers/bostongene/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for BostonGene: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bostongene/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
